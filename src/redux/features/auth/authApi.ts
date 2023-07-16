@@ -1,6 +1,7 @@
 import { IAddUser, IUser } from "./../../../types/globalTypes";
 import { api } from "../../api/apiSlice";
 import { userLoggedIn } from "./authSlice";
+import Cookies from 'js-cookie';
 
 export const authApi = api.injectEndpoints({
   overrideExisting: true,
@@ -19,6 +20,14 @@ export const authApi = api.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
+
+          Cookies.set(
+            "user",
+            JSON.stringify({
+              user: result.data.data,
+            }),
+            { expires: 0.5 }
+          );
 
           dispatch(
             userLoggedIn({
@@ -44,6 +53,14 @@ export const authApi = api.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
+
+          Cookies.set(
+            "user",
+            JSON.stringify({
+              user: result.data.data,
+            }),
+            { expires: 0.5 }
+          );
 
           dispatch(
             userLoggedIn({
