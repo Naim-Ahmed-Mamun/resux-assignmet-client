@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useSticky from "../hooks/use-sticky";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { userLoggedOut } from "../redux/features/auth/authSlice";
+import SearchForm from "../components/search-form";
 
 const Navbar = () => {
   const { sticky } = useSticky();
@@ -67,17 +68,7 @@ const Navbar = () => {
                 </li>
               )}
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <SearchForm/>
           </div>
         </div>
       </nav>

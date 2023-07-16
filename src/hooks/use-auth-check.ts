@@ -13,11 +13,11 @@ export default function useAuthCheck() {
 
         if (localAuth) {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            const auth:IUser = JSON.parse(localAuth);
+            const auth:{user:IUser} = JSON.parse(localAuth);
             if (auth) {
                 dispatch(
                     userLoggedIn({
-                        user: auth,
+                        user: auth.user,
                     })
                 );
             }
