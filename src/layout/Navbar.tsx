@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import useSticky from "../hooks/use-sticky";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { userLoggedOut } from "../redux/features/auth/authSlice";
 import SearchForm from "../components/search-form";
 
 const Navbar = () => {
-  const { sticky } = useSticky();
   const { user } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   return (

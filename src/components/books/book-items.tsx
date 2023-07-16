@@ -1,5 +1,5 @@
 import ErrorMsg from "../common/error-msg";
-import { useGetBooksQuery, useGetRecentBooksQuery } from "../../redux/features/products/productApi";
+import {useGetRecentBooksQuery } from "../../redux/features/products/productApi";
 import { Link } from "react-router-dom";
 import { IBook } from "../../types/globalTypes";
 

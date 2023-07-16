@@ -19,7 +19,7 @@ const Login = () => {
     reset,
   } = useForm<Inputs>();
 
-  const [loginUser, { data }] = useLoginUserMutation();
+  const [loginUser] = useLoginUserMutation();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const res = await loginUser(data);

@@ -20,7 +20,7 @@ const Register = () => {
     reset,
   } = useForm<Inputs>();
 
-  const [registerUser, { data }] = useRegisterUserMutation();
+  const [registerUser] = useRegisterUserMutation();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const res = await registerUser(data);

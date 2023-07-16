@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import {
   useDeleteBookMutation,
   usePostReviewMutation,
@@ -23,7 +23,7 @@ export default function BookDetails() {
     isLoading,
   } = useSingleBookQuery(id as string);
 
-  const [postReview, { data }] = usePostReviewMutation();
+  const [postReview] = usePostReviewMutation();
   const [deleteBook] = useDeleteBookMutation();
 
   // handle edit

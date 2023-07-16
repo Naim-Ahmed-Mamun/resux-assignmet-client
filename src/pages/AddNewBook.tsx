@@ -23,7 +23,7 @@ const AddNewBookPage = () => {
     reset,
   } = useForm<Inputs>();
 
-  const [postBook, { data }] = usePostBookMutation();
+  const [postBook] = usePostBookMutation();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     if (user?.email) {

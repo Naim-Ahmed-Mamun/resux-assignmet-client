@@ -6,7 +6,6 @@ import ErrorMsg from "../components/common/error-msg";
 import { toast } from "react-toastify";
 import {
   useEditBookMutation,
-  usePostBookMutation,
   useSingleBookQuery,
 } from "../redux/features/products/productApi";
 import { useAppSelector } from "../redux/hook";
@@ -34,7 +33,7 @@ const EditBookPage = () => {
     reset,
   } = useForm<Inputs>();
 
-  const [editBook, { data }] = useEditBookMutation();
+  const [editBook] = useEditBookMutation();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     if (user?.email && id) {
